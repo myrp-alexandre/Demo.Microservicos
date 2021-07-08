@@ -1,0 +1,48 @@
+{
+  "GlobalConfiguration": {
+    "ServiceDiscoveryProvider": {
+      "Scheme": "http",
+      "Host": "consul",
+      "Port": 8500,
+      "Type": "Consul"
+    }
+  },
+  "Routes": [
+    {
+      "ServiceName": "Demo.Microservico.Catalogos",
+      //"UseServiceDiscovery": true,
+      "RouteIsCaseSensitive": false,
+      "UpstreamPathTemplate": "/api/gateway/catalogo/{path}",
+      "DownstreamPathTemplate": "/catalogo/{path}",
+      "DownstreamScheme": "https",
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1s",
+        "PeriodTimestpan": 1,
+        "Limit": 1
+      }
+    },
+    {
+      "ServiceName": "Demo.Microservico.Produtos",
+      //"UseServiceDiscovery": true,
+      "RouteIsCaseSensitive": false,
+      "UpstreamPathTemplate": "/api/gateway/produto/{path}",
+      "DownstreamPathTemplate": "/produto/{path}",
+      "DownstreamScheme": "https",
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1s",
+        "PeriodTimestpan": 1,
+        "Limit": 1
+      }
+    }
+  ]
+}

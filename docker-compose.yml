@@ -1,0 +1,27 @@
+version: '3.7'
+services:
+  servidor-registro-maquinas:
+    image: consul
+    hostname: consul
+    container_name: consul
+    ports:
+      - "8500:8500"
+      - "8600:8600/udp"
+    command: consul agent -server -ui -node=server-consul -bootstrap-expect=1 -client="0.0.0.0"
+  
+  api-gateway:
+    image: api-gateway:demo-microservico
+    build: ./src/Demo.Microservico.ApiGateway
+    container_name: api-gateway
+    ports:
+      - "9000:9000"
+  
+  api-catalogo:
+    image: api-catalogo:demo-microservico
+    build: ./src/Demo.Microservico.Catalogos
+    container_name: api-catalogo
+  
+  api-produto:
+    image: api-produto:demo-microservico
+    build: ./src/Demo.Microservico.Produtos
+    container_name: api-produto
