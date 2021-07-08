@@ -49,7 +49,7 @@ https://localhost:9011/api/gateway/produto/obtertodos
 POST:
 https://localhost:9011/api/gateway/produto/criar
 {
-  "Id": "",
+  "Id": "2cefe46c-305e-4a4b-9e96-928b60b5c5b7",
   "Nome": "Produto 001",
   "Preco": 10.11,
 }
@@ -57,9 +57,9 @@ https://localhost:9011/api/gateway/produto/criar
 PUT:
 https://localhost:9011/api/gateway/produto/atualizar
 {
-  "Id": "",
+  "Id": "2cefe46c-305e-4a4b-9e96-928b60b5c5b7",
   "Nome": "Produto 001",
-  "Preco": 10.11,
+  "Preco": 20.11,
 }
 
 DELETE:
