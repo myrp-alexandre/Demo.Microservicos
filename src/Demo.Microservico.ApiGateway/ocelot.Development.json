@@ -10,11 +10,10 @@
   "Routes": [
     {
       "ServiceName": "Demo.Microservico.Catalogos",
-      //"UseServiceDiscovery": true,
       "RouteIsCaseSensitive": false,
       "UpstreamPathTemplate": "/api/gateway/catalogo/{path}",
-      //"UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
-      "DownstreamPathTemplate": "/catalogo/{path}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/catalogo/{path}",
       "DownstreamScheme": "http",
       "LoadBalancerOptions": {
         "Type": "LeastConnection"
@@ -22,11 +21,10 @@
     },
     {
       "ServiceName": "Demo.Microservico.Produtos",
-      //"UseServiceDiscovery": true,
       "RouteIsCaseSensitive": false,
       "UpstreamPathTemplate": "/api/gateway/produto/{path}",
-      //"UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
-      "DownstreamPathTemplate": "/produto/{path}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
+      "DownstreamPathTemplate": "/api/produto/{path}",
       "DownstreamScheme": "http",
       "LoadBalancerOptions": {
         "Type": "LeastConnection"

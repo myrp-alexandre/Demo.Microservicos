@@ -10,10 +10,9 @@
   "Routes": [
     {
       "ServiceName": "Demo.Microservico.Catalogos",
-      //"UseServiceDiscovery": true,
       "RouteIsCaseSensitive": false,
       "UpstreamPathTemplate": "/api/gateway/catalogo/{path}",
-      "DownstreamPathTemplate": "/catalogo/{path}",
+      "DownstreamPathTemplate": "/api/catalogo/{path}",
       "DownstreamScheme": "https",
       "LoadBalancerOptions": {
         "Type": "LeastConnection"
@@ -28,10 +27,9 @@
     },
     {
       "ServiceName": "Demo.Microservico.Produtos",
-      //"UseServiceDiscovery": true,
       "RouteIsCaseSensitive": false,
       "UpstreamPathTemplate": "/api/gateway/produto/{path}",
-      "DownstreamPathTemplate": "/produto/{path}",
+      "DownstreamPathTemplate": "/api/produto/{path}",
       "DownstreamScheme": "https",
       "LoadBalancerOptions": {
         "Type": "LeastConnection"
