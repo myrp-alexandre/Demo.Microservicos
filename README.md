@@ -36,7 +36,7 @@ docker image prume -f
 ## E os dados como vejo que funcionou?
 
 Ao configurar o ambiente, será necessário utilizar alguma Ferramenta de Teste de APIs Restful, como o [Postman](https://www.postman.com/downloads/).
-A unica porta exposta é a do API Gateway [`Porta 9011 (SSL)`], as demais não irão responder (está é a intenção). Então os Endpoint são:
+A unica porta exposta é a do API Gateway [`Porta 9011 (SSL)`], as demais não irão responder (esta era a intenção dos estudos). Então os Endpoint são:
 
 * **Endpoint de produtos (exemplos):**
 
@@ -82,9 +82,7 @@ Para ter acesso as portas dos "microserviços" e testar acessando-os diretamente
 1. Fazer um clone deste repositório em algum lugar de sua preferência:
 
 ```
-
 git clone https://github.com/myrp-alexandre/Demo.Microservicos.git
-
 ```
 
 2. Baixar o [binário do Consul](https://www.consul.io/downloads) e executar o binário;
