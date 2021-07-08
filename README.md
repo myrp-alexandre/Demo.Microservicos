@@ -35,18 +35,17 @@ docker image prume -f
 
 ## E os dados como vejo que funcionou?
 
-Ao configurar o ambiente, será necessário utilizar uma ferramenta de teste de APIs Restful, como o [Postman](https://www.postman.com/downloads/)
+Ao configurar o ambiente, será necessário utilizar alguma Ferramenta de Teste de APIs Restful, como o [Postman](https://www.postman.com/downloads/).
+A unica porta exposta é a do API Gateway [`Porta 9011 (SSL)`], as demais não irão responder (está é a intenção). Então os Endpoint são:
 
-Como a unica porta exposta é a do API Gateway, as demais não irão responder (está é a intenção). Então os Endpoint são:
-
-* Exemplo para os produtos:
+* **Endpoint de produtos (exemplos):**
 
 ```json
 
-GET:
+GET:METHOD
 https://localhost:9011/api/gateway/produto/obtertodos
 
-POST:
+POST:METHOD
 https://localhost:9011/api/gateway/produto/criar
 {
   "Id": "2cefe46c-305e-4a4b-9e96-928b60b5c5b7",
@@ -54,7 +53,7 @@ https://localhost:9011/api/gateway/produto/criar
   "Preco": 10.11,
 }
 
-PUT:
+PUT:METHOD
 https://localhost:9011/api/gateway/produto/atualizar
 {
   "Id": "2cefe46c-305e-4a4b-9e96-928b60b5c5b7",
@@ -62,16 +61,16 @@ https://localhost:9011/api/gateway/produto/atualizar
   "Preco": 20.11,
 }
 
-DELETE:
+DELETE:METHOD
 https://localhost:9011/api/gateway/produto/remover/{id}
 
 ```
 
-* Exemplo para os catalogos:
+* **Endpoint de catalogos (exemplos):**
 
 ```json
 
-GET:
+GET:METHOD
 https://localhost:9011/api/gateway/catalogo/obtertodos
 
 ```
@@ -82,14 +81,14 @@ Para ter acesso as portas dos "microserviços" e testar acessando-os diretamente
 
 1. Fazer um clone deste repositório em algum lugar de sua preferência:
 
-```PowerShell
+```
 
-git clone https://github.com/alexandredorea/Demo.Microservicos.git
+git clone https://github.com/myrp-alexandre/Demo.Microservicos.git
 
 ```
 
 2. Baixar o [binário do Consul](https://www.consul.io/downloads) e executar o binário;
-  - Sugestão usar em modo desenvolvedor para simplificar tudo:
+   - Sugestão usar em modo desenvolvedor para simplificar tudo:
 
 ```PowerShell
 
@@ -97,7 +96,7 @@ consul agent -dev
 
 ```
 
-  - Mas, se preferir colocar apenas o Serviço do Consul em Container Docker:
+   - Mas, se preferir colocar apenas o Serviço do Consul em Container Docker:
 
 ```PowerShell
 
@@ -106,8 +105,8 @@ docker run -d -p 8500:8500 -p 8600:8600/udp --name=servico-consul consul agent -
 ```  
   
 3. Rodas todas as APIs:
-  - Ou usando o Visual Studio;
-  - Ou linha de comando.
+   - Ou usando o Visual Studio;
+   - Ou linha de comando.
 
 ```PowerShell
 
