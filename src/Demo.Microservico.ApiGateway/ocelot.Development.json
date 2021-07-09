@@ -10,7 +10,6 @@
   "Routes": [
     {
       "ServiceName": "Demo.Microservico.Catalogos",
-      "RouteIsCaseSensitive": false,
       "UpstreamPathTemplate": "/api/gateway/catalogo/{path}",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamPathTemplate": "/api/catalogo/{path}",
@@ -21,7 +20,6 @@
     },
     {
       "ServiceName": "Demo.Microservico.Produtos",
-      "RouteIsCaseSensitive": false,
       "UpstreamPathTemplate": "/api/gateway/produto/{path}",
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
       "DownstreamPathTemplate": "/api/produto/{path}",

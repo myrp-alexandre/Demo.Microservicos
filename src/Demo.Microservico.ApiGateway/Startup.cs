@@ -22,6 +22,7 @@ namespace Demo.Microservico.ApiGateway
                 app.UseDeveloperExceptionPage();
 
             app.UseRouting();
+            app.UseHttpsRedirection();
 
             app.UseEndpoints(endpoints =>
             {

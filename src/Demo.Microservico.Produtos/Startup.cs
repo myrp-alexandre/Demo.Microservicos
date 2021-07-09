@@ -29,7 +29,7 @@ namespace Demo.Microservico.Produtos
                 app.UseDeveloperExceptionPage();
 
             app.UseRouting();
-
+            app.UseHttpsRedirection();
             app.UsarConsul(configuration);
 
             app.UseEndpoints(endpoints =>
